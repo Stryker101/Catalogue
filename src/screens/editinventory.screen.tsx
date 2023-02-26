@@ -15,7 +15,7 @@ import {
   VStack,
 } from "native-base";
 import React, { useContext, useState } from "react";
-import { ActivityIndicator, useWindowDimensions } from "react-native";
+import { ActivityIndicator, Dimensions } from "react-native";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -145,7 +145,7 @@ const EditInventoryScreen: React.FC<any> = () => {
       duration: 2000,
       placement: "top",
       render: () => (
-        <View bg={"green.400"} p={3} w={useWindowDimensions().width - 16}>
+        <View bg={"green.400"} p={3} w={Dimensions.get("screen").width - 16}>
           <Text
             fontFamily="Poppins_400Regular"
             fontSize={16}

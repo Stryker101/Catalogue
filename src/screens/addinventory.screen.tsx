@@ -14,7 +14,7 @@ import {
   VStack,
 } from "native-base";
 import React, { useContext, useState } from "react";
-import { ActivityIndicator, useWindowDimensions } from "react-native";
+import { ActivityIndicator, Dimensions } from "react-native";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -33,6 +33,7 @@ const AddInventoryScreen: React.FC<any> = () => {
   const [stock, setStock] = useState<string>("");
   const [price, setPrice] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+  // const [inventory, setInventory] = useState<any>([]);
   const [nameErrorStatus, setNameErrorStatus] = React.useState<string | null>(
     null
   );
@@ -63,6 +64,52 @@ const AddInventoryScreen: React.FC<any> = () => {
     if (desc.match(regex)) return true;
     else return false;
   };
+
+  // const handleSubmit = async (): Promise<void> => {
+  //   if (name === "") setNameErrorStatus("Required");
+
+  //   if (stock === "") setStockErrorStatus("Required");
+
+  //   if (price === "") setPriceErrorStatus("Required");
+
+  //   if (description === "") setDescriptionErrorStatus("Required");
+
+  //   if (!isDesc(description))
+  //     setDescriptionErrorStatus("Must be above 2 words");
+
+  //   if (
+  //     name === "" ||
+  //     price === "" ||
+  //     !isDesc(description) ||
+  //     stock === "" ||
+  //     description === ""
+  //   ) {
+  //     return;
+  //   }
+
+  //   let tag = user.email;
+
+  //   const inventItem = {
+  //     name,
+  //     stock,
+  //     price,
+  //     description,
+  //     tag,
+  //   };
+  //   let updatedInventoryItem = [...inventory, inventItem];
+  //   setInventory(updatedInventoryItem);
+  //   await AsyncStorage.setItem(
+  //     "enteries",
+  //     JSON.stringify(updatedInventoryItem)
+  //   );
+  //   findEnteries();
+  // };
+
+  // const findEnteries = async () => {
+  //   let result = await AsyncStorage.getItem("enteries");
+  //   console.log(result);
+  //   if (result !== null) setInventory(JSON.parse(result));
+  // };
 
   React.useEffect(() => {
     if (nameErrorStatus) {
@@ -143,7 +190,7 @@ const AddInventoryScreen: React.FC<any> = () => {
     toast.show({
       placement: "top",
       render: () => (
-        <View bg={"green.400"} p={3} w={useWindowDimensions().width - 16}>
+        <View bg={"green.400"} p={3} w={Dimensions.get("screen").width - 16}>
           <Text
             fontFamily="Poppins_400Regular"
             fontSize={16}
@@ -157,7 +204,6 @@ const AddInventoryScreen: React.FC<any> = () => {
       ),
     });
     resetForm();
-    naviagtion.goBack();
   }
 
   return (

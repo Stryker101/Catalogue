@@ -11,7 +11,7 @@ import {
   VStack,
 } from "native-base";
 import React, { useContext } from "react";
-import { useWindowDimensions } from "react-native";
+import { Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AuthStepContext } from "../context/auth.context";
 import {
@@ -107,7 +107,7 @@ const DashboardScreen: React.FC<any> = () => {
                   bg={"white"}
                   rounded={8}
                   mb={3}
-                  width={useWindowDimensions().width / 2 - 16 - 6}
+                  width={Dimensions.get("screen").width / 2 - 16 - 6}
                   mr={index % 2 === 0 ? 3 : 0}
                 >
                   {item.stock > 0 ? (
@@ -179,15 +179,6 @@ const DashboardScreen: React.FC<any> = () => {
                       lineHeight={20}
                     >
                       {item.description}
-                    </Text>
-                    <Text
-                      noOfLines={1}
-                      fontFamily={"Poppins_200Regular"}
-                      fontSize={10}
-                      lineHeight={20}
-                      color = "cyan.900"
-                    >
-                      Added by {item.tag}
                     </Text>
                   </VStack>
                 </View>
