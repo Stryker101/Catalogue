@@ -22,16 +22,16 @@ export default function App() {
   }
 
   return (
+    <NativeBaseProvider>
     <AuthContext>
       <ProductProvider>
-        <NativeBaseProvider>
           <SafeAreaProvider>
             <NavigationContainer>
               <RootNaviagtion />
             </NavigationContainer>
           </SafeAreaProvider>
-        </NativeBaseProvider>
       </ProductProvider>
     </AuthContext>
+     </NativeBaseProvider>
   );
 }

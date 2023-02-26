@@ -1,10 +1,11 @@
-import { MaterialIcons } from "@expo/vector-icons";
 import { Button, Icon, Input, Text, View, VStack } from "native-base";
 import React, { useContext } from "react";
 import { ActivityIndicator, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AuthStepContext } from "../context/auth.context";
 import { storeUser } from "../utils/helpers.utils";
+import { MaterialIcons } from "@expo/vector-icons";
+
 
 const LoginScreen: React.FC<any> = () => {
   const [show, setShow] = React.useState<boolean>(false);
