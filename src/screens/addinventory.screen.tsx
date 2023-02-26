@@ -65,52 +65,6 @@ const AddInventoryScreen: React.FC<any> = () => {
     else return false;
   };
 
-  // const handleSubmit = async (): Promise<void> => {
-  //   if (name === "") setNameErrorStatus("Required");
-
-  //   if (stock === "") setStockErrorStatus("Required");
-
-  //   if (price === "") setPriceErrorStatus("Required");
-
-  //   if (description === "") setDescriptionErrorStatus("Required");
-
-  //   if (!isDesc(description))
-  //     setDescriptionErrorStatus("Must be above 2 words");
-
-  //   if (
-  //     name === "" ||
-  //     price === "" ||
-  //     !isDesc(description) ||
-  //     stock === "" ||
-  //     description === ""
-  //   ) {
-  //     return;
-  //   }
-
-  //   let tag = user.email;
-
-  //   const inventItem = {
-  //     name,
-  //     stock,
-  //     price,
-  //     description,
-  //     tag,
-  //   };
-  //   let updatedInventoryItem = [...inventory, inventItem];
-  //   setInventory(updatedInventoryItem);
-  //   await AsyncStorage.setItem(
-  //     "enteries",
-  //     JSON.stringify(updatedInventoryItem)
-  //   );
-  //   findEnteries();
-  // };
-
-  // const findEnteries = async () => {
-  //   let result = await AsyncStorage.getItem("enteries");
-  //   console.log(result);
-  //   if (result !== null) setInventory(JSON.parse(result));
-  // };
-
   React.useEffect(() => {
     if (nameErrorStatus) {
       setTimeout(() => {
@@ -204,6 +158,7 @@ const AddInventoryScreen: React.FC<any> = () => {
       ),
     });
     resetForm();
+    naviagtion.goBack();
   }
 
   return (

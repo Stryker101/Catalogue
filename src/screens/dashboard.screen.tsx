@@ -180,6 +180,15 @@ const DashboardScreen: React.FC<any> = () => {
                     >
                       {item.description}
                     </Text>
+                    <Text
+                      noOfLines={1}
+                      fontFamily={"mono"}
+                      fontSize={10}
+                      lineHeight={20}
+                      color = "danger.600"
+                    >
+                      Added by {user.email}
+                    </Text>
                   </VStack>
                 </View>
               </Pressable>
