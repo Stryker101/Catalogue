@@ -33,7 +33,6 @@ const AddInventoryScreen: React.FC<any> = () => {
   const [stock, setStock] = useState<string>("");
   const [price, setPrice] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  // const [inventory, setInventory] = useState<any>([]);
   const [nameErrorStatus, setNameErrorStatus] = React.useState<string | null>(
     null
   );
